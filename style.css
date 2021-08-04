@@ -1,0 +1,53 @@
+.game{
+    margin: 50px;
+    background-color: chartreuse;
+    border: dotted black 2px;
+    height: 500px;
+    width: 500px;
+}
+.box{
+    display: inline-block;
+    border: solid blueviolet;
+    height: 50px;
+    width: 50px;
+    
+}
+.player{
+    transform: translateY(250px);
+    background-color:indigo;
+    animation-name:move;
+    animation-duration: 4s ;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /* i want to add a features so that when i will click then only it will move so here goes the code */
+    animation-play-state: paused;
+}
+/* i want to add a features so that when i will click then only it will move so here goes the code */
+.game:active .player{   
+    /* active k baad space hatane se nahi kaam kar raha hai */
+    /* if game is active and andar agar player hai to  runnning chahiye */
+animation-play-state: running;
+}
+.enemy{
+margin-left: 80px;
+background-color :crimson;
+ animation-name: bounce;
+ animation-iteration-count: infinite;
+ animation-timing-function: linear;
+}
+.enemy.one {
+    animation-duration: 2s;
+}
+.enemy.two {
+    animation-duration: 5s;
+}
+@keyframes bounce{
+50% {
+    transform:translateY(450px)
+}
+}
+@keyframes move {
+50% {
+    transform: translateX(450px) translateY(250px) ;
+}
+}
